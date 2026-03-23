@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Portfolio
 
-# Run and deploy your AI Studio app
+React + Vite + TypeScript portfolio with an Express server for contact feedback email.
 
-This contains everything you need to run your app locally.
+## Prerequisites
 
-View your app in AI Studio: https://ai.studio/apps/d999a978-3c18-49dc-8849-75d88b984353
+- Node.js 18+ (recommended)
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
+## Setup
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+   ```bash
+   npm install
+   ```
+
+   Or with Yarn:
+
+   ```bash
+   yarn install
+   ```
+
+2. Optional — for `/api/feedback` to send email via Gmail, create a `.env` in the project root:
+
+   - `EMAIL_USER` — Gmail address
+   - `EMAIL_PASS` — [app password](https://support.google.com/accounts/answer/185833) (not your normal login)
+
+   Without these, feedback is logged on the server and the API still returns success.
+
+## Run locally
+
+```bash
+npm run dev
+```
+
+Opens the app at [http://localhost:3000](http://localhost:3000) (Express serves Vite in dev).
+
+## Production build
+
+```bash
+npm run build
+```
+
+Set `NODE_ENV=production` when running `server.ts` so it serves the `dist/` folder.
