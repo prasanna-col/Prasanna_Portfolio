@@ -1,0 +1,7 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets (dotenv)
+.env
+.env.*
+!.env.example

@@ -1,7 +1,7 @@
 import { PortfolioData } from './types';
 
 export const portfolioData: PortfolioData = {
-  name: "Prasanna Venkatesh",
+  name: "Prasanna Venkatesh M P",
   title: "Senior React Native Developer",
   yearsOfExperience: "6+",
   summary: "Senior React Native Developer with over 6 years of experience in building, deploying, and maintaining scalable cross-platform mobile applications for Android and iOS platforms. Strong expertise in React Native, Expo, JavaScript, TypeScript, Redux, Context API, and Firebase. Proven track record of delivering end-to-end mobile solutions including requirement analysis, architecture design, third-party integrations, performance optimization, app store deployment, and post-release support.",
