@@ -43,3 +43,15 @@ npm run build
 ```
 
 Set `NODE_ENV=production` when running `tsx server/index.ts` so it serves the `dist/` folder.
+
+## Deploy on Vercel
+
+Vercel does **not** use a committed `.env` file. You add the same variables in the dashboard: **Project → Settings → Environment Variables**.
+
+1. Add **`EMAIL_USER`** and **`EMAIL_PASS`** (same values as local Gmail / App Password).
+2. Apply them to **Production** (and **Preview** if you test preview deployments).
+3. **Redeploy** after saving env vars (or use “Redeploy” from the latest deployment) so new variables are picked up.
+
+The repo includes **`api/feedback.ts`**, a Vercel Serverless Function for `POST /api/feedback`. That handler reads `process.env` at runtime on Vercel, so your dashboard variables work in production. The static site is built with `npm run build` (`dist/`); `vercel.json` rewrites non-API routes to `index.html` for the SPA.
+
+In the Vercel project, set **Build Command** to `npm run build` and **Output Directory** to `dist` (Vite default).
